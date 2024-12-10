@@ -14,6 +14,12 @@
         }
     ],
     "env": {
-        "PYTHONPATH": "src/"
+        "PYTHONPATH": "src/",
+        "PATH": "$PATH:bin/"
+    },
+    "functions": {
+        "src/main.py": {
+            "includeFiles": "bin/**"
+        }
     }
 }

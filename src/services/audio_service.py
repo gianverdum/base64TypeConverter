@@ -3,8 +3,13 @@ import base64
 import io
 
 from pydub import AudioSegment
+from pydub.utils import which
 
 from src.schemas.audio import AudioBase64Request, AudioBase64Response
+
+# Configuring the path to ffmpeg and ffprobe
+AudioSegment.converter = which("ffmpeg")
+AudioSegment.ffprobe = which("ffprobe")
 
 SUPPORTED_FORMATS = ["mp3", "wav", "ogg", "m4a", "flac", "webm"]
 
